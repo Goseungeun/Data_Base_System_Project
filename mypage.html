@@ -13,31 +13,39 @@
 </head>
 <body>
     <div class="container">
-        <h4><b>개인 정보</b></h4>
-        <table class="table table-bordered table-light">
+        <div class="row">
+            <div class="col-6">
+                <h4><b>개인 정보 </b> <span class="badge bg-indigo rounded-pill">Player</span> </h4>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn text-white bg-indigo right" type="button" onclick = "location.href = '/mypage_modify.html'">개인정보 수정</button>
+            </div>
+        </div>
+        
+        <table class="table table-bordered table-light text-center my-3">
             <tbody>
             <tr>
-                <th>이름</th>
+                <th class="table-active">이름</th>
                 <td>가을</td>
-                <th>포지션</th>
+                <th class="table-active">포지션</th>
                 <td>GK</td>
             </tr>
             <tr>
-                <th>국적</th>
+                <th class="table-active">국적</th>
                 <td>한국</td>
-                <th>키</th>
+                <th class="table-active">키</th>
                 <td>160cm</td>
             </tr>
             <tr>
-                <th>생일</th>
+                <th class="table-active">생일</th>
                 <td>1999-10-20</td>
-                <th>몸무게</th>
+                <th class="table-active">몸무게</th>
                 <td>55kg</td>
             </tr>
             <tr>
-                <th>등번호</th>
+                <th class="table-active">등번호</th>
                 <td>1</td>
-                <th>소속팀</th>
+                <th class="table-active">소속팀</th>
                 <td>가을팀</td>
             </tr>
             </tbody>
