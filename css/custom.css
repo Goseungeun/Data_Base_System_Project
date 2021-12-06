@@ -33,4 +33,11 @@ a{
 .logo{
     height:100px;
     width:100px;
+    object-fit: contain;
 }
+
+.logo_extend{
+    height:150px;
+    object-fit: contain;
+}
+
