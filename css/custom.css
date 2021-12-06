@@ -21,3 +21,7 @@ iframe {
 .right {
     float: right;
 }
+
+a{
+    text-decoration:none;
+}
