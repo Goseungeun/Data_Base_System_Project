@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/custom.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
 </head>
 <body>
     <div class="container">
@@ -18,7 +19,7 @@
                 <h4><b>개인 정보 </b> <span class="badge bg-indigo rounded-pill">Player</span> </h4>
             </div>
             <div class="col-6">
-                <button type="button" class="btn text-white bg-indigo right" type="button" onclick = "location.href = '/mypage_modify.html'">개인정보 수정</button>
+                <a href = 'mypage_modify.html' id="mypage_modify_button" class="btn text-white bg-indigo right">개인정보 수정</a>
             </div>
         </div>
         
@@ -69,17 +70,17 @@
               <tr>
                 <th scope="row">1</th>
                 <td><a href="#">Mark</a></td>
-                <td><a href="#">취소하기</a></td>
+                <td>취소하기</td>
               </tr>
               <tr>
                 <th scope="row">2</th>
                 <td><a href="#">Mark1</a></td>
-                <td><a href="#">취소하기</a></td>
+                <td>취소하기</td>
               </tr>
               <tr>
                 <th scope="row">3</th>
                 <td><a href="#">Mark2</a></td>
-                <td><a href="#">취소하기</a></td>
+                <td>취소하기</td>
               </tr>
             </tbody>
           </table>
