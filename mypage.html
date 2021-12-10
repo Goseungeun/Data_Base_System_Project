@@ -13,7 +13,7 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="player">
         <div class="row">
             <div class="col-6">
                 <h4><b>개인 정보 </b> <span class="badge bg-indigo rounded-pill">Player</span> </h4>
@@ -44,10 +44,10 @@
                 <td>55kg</td>
             </tr>
             <tr>
-                <th class="table-active">등번호</th>
-                <td>1</td>
                 <th class="table-active">소속팀</th>
                 <td>가을팀</td>
+                <th class="table-active">등번호</th>
+                <td>1</td>
             </tr>
             </tbody>
         </table>
@@ -55,10 +55,10 @@
         <hr class="my-4">
 
         <div class="row">
-            <h4><b>팀 지원 리스트 </b> <span class="badge bg-indigo rounded-pill">Player</span> </h4>
+            <h4><b>지원한 팀 리스트 </b> <span class="badge bg-indigo rounded-pill">Player</span> </h4>
         </div>
         
-        <table id="ApplyTable" class="table table-striped text-center my-3">
+        <table id="ApplyTable" class="table table-striped text-center my-3 align-middle align-middle">
             <thead  class="table-dark">
               <tr>
                 <th scope="col">#</th>
@@ -70,22 +70,97 @@
               <tr>
                 <th scope="row">1</th>
                 <td><a href="team_info.html">Mark</a></td>
-                <td>취소하기</td>
+                <td><a id="cancel_button" class="btn text-white bg-indigo">취소하기</a></td>
               </tr>
               <tr>
                 <th scope="row">2</th>
                 <td><a href="team_info.html">Mark1</a></td>
-                <td>취소하기</td>
+                <td><a id="cancel_button" class="btn text-white bg-indigo">취소하기</a></td>
               </tr>
               <tr>
                 <th scope="row">3</th>
                 <td><a href="team_info.html">Mark2</a></td>
-                <td>취소하기</td>
+                <td><a id="cancel_button" class="btn text-white bg-indigo">취소하기</a></td>
               </tr>
             </tbody>
           </table>
         
     </div>
+
+
+    <div class="container" id="coach">
+      <div class="row">
+          <div class="col-6">
+              <h4><b>개인 정보 </b> <span class="badge bg-indigo rounded-pill">Coach</span> </h4>
+          </div>
+          <div class="col-6">
+              <a href = 'mypage_modify.html' id="mypage_modify_button" class="btn text-white bg-indigo right">개인정보 수정</a>
+          </div>
+      </div>
+      
+      <table id="PersonalInformationTable" class="table table-bordered table-light text-center my-3">
+          <tbody>
+          <tr>
+              <th class="table-active">이름</th>
+              <td>가을</td>
+              <th class="table-active">포지션</th>
+              <td>-</td>
+          </tr>
+          <tr>
+              <th class="table-active">국적</th>
+              <td>한국</td>
+              <th class="table-active">키</th>
+              <td>-</td>
+          </tr>
+          <tr>
+              <th class="table-active">생일</th>
+              <td>1999-10-20</td>
+              <th class="table-active">몸무게</th>
+              <td>-</td>
+          </tr>
+          <tr>
+            <th class="table-active">소속팀</th>
+            <td>가을팀</td>
+            <th class="table-active">등번호</th>
+            <td>-</td>
+          </tr>
+          </tbody>
+      </table>
+
+      <hr class="my-4">
+
+      <div class="row">
+          <h4><b>팀 지원한 선수 리스트 </b> <span class="badge bg-indigo rounded-pill">Coach</span> </h4>
+      </div>
+      
+      <table id="ApplyTable" class="table table-striped text-center my-3 align-middle">
+          <thead  class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">선수 이름</th>
+              <th scope="col">영입 허가</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td><a href="team_info.html">Mark</a></td>
+              <td><a id="permission_button" class="btn text-white bg-indigo">허가하기</a></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td><a href="team_info.html">Mark1</a></td>
+              <td><a id="permission_button" class="btn text-white bg-indigo">허가하기</a></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td><a href="team_info.html">Mark2</a></td>
+              <td><a id="permission_button" class="btn text-white bg-indigo">허가하기</a></td>
+            </tr>
+          </tbody>
+        </table>
+      
+  </div>
 </body>
 
 </html>
