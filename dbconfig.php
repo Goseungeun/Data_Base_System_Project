@@ -2,6 +2,7 @@
 $servername = "localhost:3306";
 $username = "root";
 $password = "root";
+// $dbname = "k_league";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
