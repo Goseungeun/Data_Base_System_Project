@@ -94,12 +94,12 @@
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td><a href="team_info.html">Mark1</a></td>
+              <td><a href="team_info.html">AA</a></td>
               <td><a id="permission_button" class="btn text-white bg-indigo">허가하기</a></td>
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td><a href="team_info.html">Mark2</a></td>
+              <td><a href="team_info.html">ABB</a></td>
               <td><a id="permission_button" class="btn text-white bg-indigo">허가하기</a></td>
             </tr>
           </tbody>
@@ -175,12 +175,12 @@ $data_p=mysqli_fetch_array($result_p);?>
               </tr>
               <tr>
                 <th scope="row">2</th>
-                <td><a href="team_info.html">Mark1</a></td>
+                <td><a href="team_info.html">See</a></td>
                 <td><a id="cancel_button" class="btn text-white bg-indigo">취소하기</a></td>
               </tr>
               <tr>
                 <th scope="row">3</th>
-                <td><a href="team_info.html">Mark2</a></td>
+                <td><a href="team_info.html">SOR</a></td>
                 <td><a id="cancel_button" class="btn text-white bg-indigo">취소하기</a></td>
               </tr>
             </tbody>
