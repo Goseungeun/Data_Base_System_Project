@@ -20,8 +20,9 @@
 </head>
 
 <body>
-    <iframe src="header.html" marginheight=0 ></iframe>
+    <iframe src="header.php" marginheight=0 ></iframe>  <iframe id="main_frame" src="main.html" marginheight=0 topmargin=0></iframe>
     <iframe id="main_frame" src="main.html" marginheight=0 topmargin=0></iframe>
+
 </body>
 
 </html>
