@@ -25,14 +25,12 @@
                     <a class="d-flex align-items-center me-md-auto text-white navbar-brand text-decoration-none" data-url="main.html">K-League TM</a>
                 
                     <ul class="nav justify-content-around">
-                        <li class="nav-item px-2"><a data-url="team.html" class="btn btn-outline-light" aria-current="page">팀</a></li>
+                        <li class="nav-item px-2"><a data-url="team.php" class="btn btn-outline-light" aria-current="page">팀</a></li>
                         <li class="nav-item px-2"><a data-url="notice.html" class="btn btn-outline-light">팀 공지사항</a></li>
                         <li class="nav-item px-2"><a data-url="message.html" class="btn btn-outline-light">메세지</a></li>
                         <li class="nav-item px-2"><a data-url="practice_match.html" class="btn btn-outline-light">연습경기 일정</a></li>
                         <li class="nav-item px-2"><a data-url="mypage.html" class="btn btn-outline-light">MY PAGE</a></li>
-                        <li class="nav-item px-2"><a data-url="logout.php" class="btn btn-outline-light">LOGOUT</a></li>
-                      
-              <hr class="my-4">
+                        <li class="nav-item px-2"><button class="btn btn-outline-light" type="button" onclick = "window.open('./login.php')">LOGOUT</button></li>
                     </ul>
                 </header>
             </div>
