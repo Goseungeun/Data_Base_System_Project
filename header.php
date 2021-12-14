@@ -30,6 +30,9 @@
                         <li class="nav-item px-2"><a data-url="message.html" class="btn btn-outline-light">메세지</a></li>
                         <li class="nav-item px-2"><a data-url="practice_match.html" class="btn btn-outline-light">연습경기 일정</a></li>
                         <li class="nav-item px-2"><a data-url="mypage.html" class="btn btn-outline-light">MY PAGE</a></li>
+                        <li class="nav-item px-2"><a data-url="logout.php" class="btn btn-outline-light">LOGOUT</a></li>
+                      
+              <hr class="my-4">
                     </ul>
                 </header>
             </div>

@@ -34,7 +34,7 @@
 
 </head>
 <body class="bg-light">
-    
+  <form method = "POST" action = "signin.php"  
     <div class="container">
       <main>
         <div class="py-5 text-center">
@@ -47,11 +47,11 @@
                 <h4 class="mb-3">코치인지 선수인지 선택</h4>
                 <div class="my-3 mx-1 row">
                     <div class="form-check col-3">
-                        <input id="player" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                        <input id="player" name="usertype" type="radio" value = "player" class="form-check-input" checked="" required="">
                         <label class="form-check-label" for="player"><b>Player</b></label>
                     </div>
                     <div class="form-check col-3">
-                        <input id="coach" name="paymentMethod" type="radio" class="form-check-input" required="">
+                        <input id="coach" name="usertype" type="radio" value = "coach" class="form-check-input" required="">
                         <label class="form-check-label" for="coach"><b>Coach</b></label>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                 <div class="col-12">
                   <label for="ID" class="form-label">ID</label>
                   <div class="input-group has-validation">
-                    <input type="text" class="form-control" id="ID" placeholder="ID" required="">
+                    <input type="text" class="form-control" name = "id" id="ID" placeholder="ID" required="">
                     <div class="invalid-feedback">
                       Your ID is required.
                     </div>
@@ -72,7 +72,7 @@
                 <div class="col-12">
                     <label for="PW" class="form-label">PW</label>
                     <div class="input-group has-validation">
-                        <input type="password" class="form-control" id="PW" placeholder="Password" required="">
+                        <input type="password" class="form-control" name = "pw" id="PW" placeholder="Password" required="">
                         <div class="invalid-feedback">
                             Your Password is required.
                         </div>
@@ -81,7 +81,7 @@
       
                 <div class="col-12">
                     <label for="Name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="Name" placeholder="Name" value="" required="">
+                    <input type="text" class="form-control" name = "name" id="Name" placeholder="Name" value="" required="">
                     <div class="invalid-feedback">
                       Valid Name is required.
                     </div>
@@ -89,11 +89,16 @@
 
                 <div class="col-md-5">
                     <label for="country" class="form-label">Country</label>
-                    <select class="form-select" id="country" required="">
+                    <select class="form-select" name = "nation" id="country" required="">
                       <option value="">Choose...</option>
-                      <option>South Korea</option>
-                      <option>United States</option>
-                      <option>가을나라</option>
+                      <option>한국</option>
+                      <option>미국</option>
+                      <option>브라질</option>
+                      <option>세르비아</option>
+                      <option>호주</option>
+                      <option>우크라이나</option>
+                      <option>캐나다</option>
+                      <option>스위스</option>
                     </select>
                     <div class="invalid-feedback">
                       Please select a valid Country.
@@ -102,7 +107,7 @@
 
                 <div class="col-12">
                   <label for="birthday" class="form-label">Birthday</label>
-                  <input type="date" class="form-control" id="birthday" placeholder="" required="">
+                  <input type="date" class="form-control" name="birthday" id="birthday" placeholder="" required="">
                   <div class="invalid-feedback">
                     Valid Birthday is required.
                   </div>
@@ -110,12 +115,21 @@
     
                 <div class="col-md-5">
                   <label for="team" class="form-label">Team</label>
-                  <select class="form-select" id="team" required="">
+                  <select class="form-select" name="team" id="team" required="">
                     <option value="">Choose...</option>
-                    <option>가을팀</option>
-                    <option>고승은팀</option>
-                    <option>임지현팀</option>
-                    <option>박석원팀</option>
+                    <option>무소속</option>
+                    <option>FC서울</option>
+                    <option>강원FC</option>
+                    <option>광주FC</option>
+                    <option>대구FC</option>
+                    <option>성남FC</option>
+                    <option>수원 삼성 블루윙즈</option>
+                    <option>수원FC</option>
+                    <option>울산 현대 축구단</option>
+                    <option>인천 유나이티드</option>
+                    <option>전북 현대 모터스</option>
+                    <option>제주 유나이티드</option>
+                    <option>포항 스틸러스</option>
                   </select>
                   <div class="invalid-feedback">
                     Valid Team is required.
@@ -128,7 +142,7 @@
                 <div class="row gy-3" >
                     <div class="col-md-5">
                         <label for="height" class="form-label">Height</label>
-                        <input type="number" class="form-control " id="heignt" placeholder="" required="">
+                        <input type="number" class="form-control " name="height" id="heignt" placeholder="" required="">
                         <div class="invalid-feedback">
                             Valid Height is required.
                         </div>
@@ -139,7 +153,7 @@
         
                     <div class="col-md-5">
                         <label for="weight" class="form-label">Weight</label>
-                        <input type="number" class="form-control " id="weight" placeholder="" required="">
+                        <input type="number" class="form-control " name="weight" id="weight" placeholder="" required="">
                         <div class="invalid-feedback">
                             Valid Weight is required.
                         </div>
@@ -150,7 +164,7 @@
         
                     <div class="col-md-6">
                         <label for="position" class="form-label">Position</label>
-                        <select class="form-select" id="position" required="">
+                        <select class="form-select" name="position" id="position" required="">
                             <option value="">Choose...</option>
                             <option>GK</option>
                             <option>DF</option>
@@ -167,7 +181,7 @@
                         <p class="text-right">No.</p>
                     </div>
                     <div class="col-md-5 align-self-end ">
-                        <input type="number" class="form-control " id="uniformnumber" placeholder="" required="">
+                        <input type="number" class="form-control " name = "uniformnum" id="uniformnumber" placeholder="" required="">
                         <div class="invalid-feedback">
                             Valid Uniform Number is required.
                         </div>
@@ -177,18 +191,18 @@
     
               <hr class="my-4">
     
-              <button class="w-100 btn btn-primary btn-lg mb-5" type="button" onclick = "location.href = '/login.html'">Sign up!</button>
+              <button class="w-100 btn btn-primary btn-lg mb-5" type="submit" >Sign up!</button>
             </form>
           
         </div>
-      </main>
-    </div>
+        </main>
+      </div>
     
     
         <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
           <script src="form-validation.js"></script>
       
-    
-    </body>
+  </form>
+</body>
 </html>
