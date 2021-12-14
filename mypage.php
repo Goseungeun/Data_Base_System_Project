@@ -20,7 +20,21 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
 <body>
-
+<nav class="navbar navbar-static-top navbar-dark bg-indigo ">
+        <div class="container" style="display: block;">
+            <header class="d-flex flex-wrap py-2">
+                <a class="d-flex align-items-center me-md-auto text-white navbar-brand text-decoration-none" href="index.php">K-League TM</a>
+                <ul class="nav justify-content-around">
+                    <li class="nav-item px-2"><a href="./team.php" class="btn btn-outline-light" aria-current="page">팀</a></li>
+                    <li class="nav-item px-2"><a href="./notice.php" class="btn btn-outline-light">팀 공지사항</a></li>
+                    <li class="nav-item px-2"><a href="./message.php" class="btn btn-outline-light">메세지</a></li>
+                    <li class="nav-item px-2"><a href="./practice_match.php" class="btn btn-outline-light">연습경기 일정</a></li>
+                    <li class="nav-item px-2"><a href="./mypage.php" class="btn btn-outline-light">MY PAGE</a></li>
+                    <li class="nav-item px-2"><button class="btn btn-outline-light" type="button" onclick = "location.href = 'logout.php'">LOGOUT</button></li>
+                </ul>
+            </header>
+        </div>
+    </nav>
 
 <!-- usertype이 c일때, 코치 내용 출력 -->
 <?php if($type=='C'):
@@ -33,7 +47,7 @@
               <h4><b>개인 정보 </b> <span class="badge bg-indigo rounded-pill">Coach</span> </h4>
           </div>
           <div class="col-6">
-              <a href = 'mypage_modify.html' id="mypage_modify_button" class="btn text-white bg-indigo right">개인정보 수정</a>
+              <a href ='mypage_modify_coach.php' id="mypage_modify_button" class="btn text-white bg-indigo right">개인정보 수정</a>
           </div>
       </div>
       
@@ -94,7 +108,7 @@
   </div>
 
  <!-- usertype이 p일때, 선수 내용 출력 --> 
-<?php elseif($_SESSION['usertype']=='P'):
+<?php elseif($type=='P'):
 $sql_p="SELECT * FROM player WHERE PLID='{$id}'";
 $result_p=mysqli_query($conn,$sql_p);
 $data_p=mysqli_fetch_array($result_p);?>
@@ -105,7 +119,7 @@ $data_p=mysqli_fetch_array($result_p);?>
                 <h4><b>개인 정보 </b> <span class="badge bg-indigo rounded-pill">Player</span> </h4>
             </div>
             <div class="col-6">
-                <a href = 'mypage_modify.html' id="mypage_modify_button" class="btn text-white bg-indigo right">개인정보 수정</a>
+                <a href = 'mypage_modify_player.php' id="mypage_modify_button" class="btn text-white bg-indigo right">개인정보 수정</a>
             </div>
         </div>
         
