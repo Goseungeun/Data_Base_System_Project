@@ -46,7 +46,7 @@
           <div class="text-center">
             <h2><b>개인정보 수정</b></h2>
           </div>
-      
+          <form method="POST" action="mypage_modify_coach_php.php">
           <div class="row g-5">
               <form class="needs-validation" novalidate="">
                  
@@ -64,7 +64,7 @@
                   <div class="col-12">
                       <label for="PW" class="form-label">PW</label>
                       <div class="input-group has-validation">
-                          <input type="password" class="form-control" id="PW" placeholder="Password" value=<?php echo $data_c['PLPW'] ?>>
+                          <input type="password" class="form-control" id="PW" name="pw" placeholder="Password" value=<?php echo $data_c['CoachPW'] ?>>
                           <div class="invalid-feedback">
                               Your Password is required.
                           </div>
@@ -73,7 +73,7 @@
         
                   <div class="col-12">
                       <label for="Name" class="form-label">Name</label>
-                      <input type="text" class="form-control" id="Name" placeholder="Name" value=<?php echo $data_c['PLname'] ?>>
+                      <input type="text" class="form-control" id="Name" name="name" placeholder="Name" value=<?php echo $data_c['Coachname'] ?>>
                       <div class="invalid-feedback">
                         Valid Name is required.
                       </div>
@@ -81,8 +81,8 @@
   
                   <div class="col-md-5">
                       <label for="country" class="form-label">Country</label>
-                      <select class="form-select" id="country" required="">
-                        <option value=<?php echo $data_p['PLnation']?>><?php echo $data_c['PLnation']?></option>
+                      <select class="form-select" id="nation" name="nation" required="">
+                        <option value=<?php echo $data_c['Coachnation']?>><?php echo $data_c['Coachnation']?></option>
                         <option>한국</option>
                         <option>미국</option>
                         <option>브라질</option>
@@ -99,7 +99,7 @@
   
                   <div class="col-12">
                     <label for="birthday" class="form-label">Birthday</label>
-                    <input type="date" class="form-control" id="birthday" placeholder="" required=""value=<?php echo $data_c['PLbirthday'] ?>>
+                    <input type="date" class="form-control" id="birthday" name="birthday" placeholder="" required=""value=<?php echo $data_c['Coachbirthday'] ?>>
                     <div class="invalid-feedback">
                       Valid Birthday is required.
                     </div>
@@ -107,8 +107,8 @@
       
                   <div class="col-md-5">
                     <label for="team" class="form-label">Team</label>
-                    <select class="form-select" id="team" required="" value=<?php echo $data_c['affliated_team'] ?>>
-                      <option value=<?php echo $data_p['affliated_team'] ?>><?php echo $data_c['affliated_team'] ?></option>
+                    <select class="form-select" id="team" name="team" required="" value=<?php echo $data_c['affliated_team'] ?>>
+                      <option value=<?php echo $data_c['affliated_team'] ?>><?php echo $data_c['affliated_team'] ?></option>
                       <option>무소속</option>
                       <option>FC서울</option>
                       <option>강원FC</option>
@@ -132,7 +132,7 @@
       
                 <hr class="my-4">
       
-                <button class="w-100 btn btn-primary btn-lg mb-5" type="button" onclick = "location.href = '/mypage.html'">수정완료</button>
+                <button class="w-100 btn btn-primary btn-lg mb-5" type="button" onclick = "location.href = 'mypage.php'">수정완료</button>
               </form>
             </main>
           </div>
