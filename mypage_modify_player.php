@@ -5,7 +5,7 @@
   mysqli_select_db($conn,$dbname) or die ('DB selection failed');
   session_start();
   $id=$_SESSION['user_id'];
-  $usertype=$_SESSION['usertype'];
+  $type=$_SESSION['usertype'];
   ?>
 <html lang="en">
 <head>
@@ -22,7 +22,6 @@
 
 </head>
 <body>
-
 <nav class="navbar navbar-static-top navbar-dark bg-indigo ">
         <div class="container" style="display: block;">
             <header class="d-flex flex-wrap py-2">
@@ -48,7 +47,7 @@
           <div class="text-center">
             <h2><b>개인정보 수정</b></h2>
           </div>
-          <form method="POST" action="mypage_modify_player_php.php">
+      
           <div class="row g-5">
               <form class="needs-validation" novalidate="">
                  
@@ -65,7 +64,7 @@
                   <div class="col-12">
                       <label for="PW" class="form-label">PW</label>
                       <div class="input-group has-validation">
-                          <input type="password" class="form-control" id="pw" name="pw" placeholder="Password" value=<?php echo $data_p['PLPW'] ?>>
+                          <input type="password" class="form-control" id="PW" placeholder="Password" value=<?php echo $data_p['PLPW'] ?>>
                           <div class="invalid-feedback">
                               Your Password is required.
                           </div>
@@ -74,7 +73,7 @@
         
                   <div class="col-12">
                       <label for="Name" class="form-label">Name</label>
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Name" value=<?php echo $data_p['PLname'] ?>>
+                      <input type="text" class="form-control" id="Name" placeholder="Name" value=<?php echo $data_p['PLname'] ?>>
                       <div class="invalid-feedback">
                         Valid Name is required.
                       </div>
@@ -82,7 +81,7 @@
   
                   <div class="col-md-5">
                       <label for="country" class="form-label">Country</label>
-                      <select class="form-select" id="nation" name="nation" required="">
+                      <select class="form-select" id="country" required="">
                         <option value=<?php echo $data_p['PLnation']?>><?php echo $data_p['PLnation']?></option>
                         <option>한국</option>
                         <option>미국</option>
@@ -100,7 +99,7 @@
   
                   <div class="col-12">
                     <label for="birthday" class="form-label">Birthday</label>
-                    <input type="date" class="form-control" id="birthday" name="birthday" placeholder="" required=""value=<?php echo $data_p['PLbirthday'] ?>>
+                    <input type="date" class="form-control" id="birthday" placeholder="" required=""value=<?php echo $data_p['PLbirthday'] ?>>
                     <div class="invalid-feedback">
                       Valid Birthday is required.
                     </div>
@@ -108,7 +107,7 @@
       
                   <div class="col-md-5">
                     <label for="team" class="form-label">Team</label>
-                    <select class="form-select" id="team" name="team" required="" value=<?php echo $data_p['affliated_team'] ?>>
+                    <select class="form-select" id="team" required="" value=<?php echo $data_p['affliated_team'] ?>>
                       <option value=<?php echo $data_p['affliated_team'] ?>><?php echo $data_p['affliated_team'] ?></option>
                       <option>무소속</option>
                       <option>FC서울</option>
@@ -135,7 +134,7 @@
                   <div class="row gy-3" >
                       <div class="col-md-5">
                           <label for="height" class="form-label">Height</label>
-                          <input type="number" class="form-control " id="heignt" name="height" placeholder="" required=""value=<?php echo $data_p['height'] ?>>
+                          <input type="number" class="form-control " id="heignt" placeholder="" required=""value=<?php echo $data_p['height'] ?>>
                           <div class="invalid-feedback">
                               Valid Height is required.
                           </div>
@@ -146,7 +145,7 @@
           
                       <div class="col-md-5">
                           <label for="weight" class="form-label">Weight</label>
-                          <input type="number" class="form-control " id="weight" name="weight" placeholder="" required=""value=<?php echo $data_p['weight'] ?>>
+                          <input type="number" class="form-control " id="weight" placeholder="" required=""value=<?php echo $data_p['weight'] ?>>
                           <div class="invalid-feedback">
                               Valid Weight is required.
                           </div>
@@ -157,7 +156,7 @@
           
                       <div class="col-md-6">
                           <label for="position" class="form-label">Position</label>
-                          <select class="form-select" id="position" name="position" required="">
+                          <select class="form-select" id="position" required="">
                               <option value=<?php echo $data_p['position'] ?>><?php echo $data_p['position'] ?></option>
                               <option>GK</option>
                               <option>DF</option>
@@ -174,7 +173,7 @@
                           <p class="text-right">No.</p>
                       </div>
                       <div class="col-md-5 align-self-end ">
-                          <input type="number" class="form-control " id="uniformnumber" name="uniformnumber" placeholder="" required=""value=<?php echo $data_p['uniformnum'] ?>>
+                          <input type="number" class="form-control " id="uniformnumber" placeholder="" required=""value=<?php echo $data_p['uniformnum'] ?>>
                           <div class="invalid-feedback">
                               Valid Uniform Number is required.
                           </div>
@@ -184,18 +183,14 @@
       
                 <hr class="my-4">
       
-                <button class="w-100 btn btn-primary btn-lg mb-5" type="button" onclick = "location.href = 'mypage.php'">수정완료</button>
+                <button class="w-100 btn btn-primary btn-lg mb-5" type="button" onclick = "location.href = '/mypage.php'">수정완료</button>
               </form>
-            </div>
-      </main>
-    </div>
-         
-    <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            </main>
+          </div>
+          <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
-          
-    <script src="form-validation.js"></script>
+          <script src="form-validation.js"></script>
     </div>
   </form>
-
 </body>
 </html>

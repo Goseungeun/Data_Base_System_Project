@@ -30,7 +30,7 @@
             include_once 'dbconfig.php';        //db연결
             $dbname = "k_league";
             session_start();
-            $userid = $_SESSION['user_id']
+            $userid = $_SESSION['user_id'];
             mysqli_select_db($conn,$dbname) or die ('DB selection failed'); 
             ?>
 

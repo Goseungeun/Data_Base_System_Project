@@ -36,7 +36,7 @@
             <div class="p-4 p-md-5 mb-4 text-white rounded bg-indigo">
                 <div class="col-md-6 px-0">
                   <h1 class="display-4 fst-italic">K-League TM</h1>
-                  <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+                  <p class="lead my-3">선수, 감독, 팀관의 관계를 비대면으로 하게해주는 프로그램</p>
                 </div>
             </div>
             
@@ -49,21 +49,21 @@
                       <i class="fas fa-running fa-10x m-5" style="color: white; "></i>
                     </div>
                     <h2><br>Player</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                    <p>팀에 지원기능, 개인정보 수정기능, 연습경기 일정확인 기능등이 있습니다.</p>
                   </div>
                   <div class="feature col">
                     <div class="feature-icon bg-indigo bg-gradient">
                         <i class="fas fa-user-tie fa-10x m-5" style="color: white; "></i>
                     </div>
                     <h2><br>Coach</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                    <p>팀선수 관리기능, 팀정보 관리기능, 연습경기 잡는기능 등이 있습니다.</p>
                   </div>
                   <div class="feature col">
                     <div class="feature-icon bg-indigo bg-gradient">
                         <i class="fas fa-users  fa-10x m-5" style="color: white; "></i>
                     </div>
                     <h2><br>Team</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                    <p>팀 공지사항, 팀랭킹등을 보여줄 수 있습니다.</p>
                   </div>
                 </div>
               </div>

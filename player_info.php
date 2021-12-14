@@ -12,6 +12,16 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
 <body>
+    <?php 
+    include_once 'dbconfig.php';        //db연결
+    $dbname = "k_league";
+    mysqli_select_db($conn,$dbname) or die ('DB selection failed');
+    $PLname = $_GET['pname'];
+    $teamname = $_GET['teamname']; 
+    $sql = "SELECT * FROM player WHERE PLname = '{$PLname}' AND affliated_team = '{$teamname}'";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_array($result);
+    ?>
     <div class="container">
         <div class="row">
             <div class="col-6">
@@ -26,27 +36,27 @@
             <tbody>
             <tr>
                 <th class="table-active">이름</th>
-                <td>가을</td>
+                <?php echo '<td>'.$row['PLname'].'</td>'; ?>
                 <th class="table-active">포지션</th>
-                <td>GK</td>
+                <?php echo '<td>'.$row['position'].'</td>'; ?>
             </tr>
             <tr>
                 <th class="table-active">국적</th>
-                <td>한국</td>
+                <?php echo '<td>'.$row['PLnation'].'</td>'; ?>
                 <th class="table-active">키</th>
-                <td>160cm</td>
+                <?php echo '<td>'.$row['height'].'cm </td>'; ?>
             </tr>
             <tr>
                 <th class="table-active">생일</th>
-                <td>1999-10-20</td>
+                <?php echo '<td>'.$row['PLbirthday'].'</td>'; ?>
                 <th class="table-active">몸무게</th>
-                <td>55kg</td>
+                <?php echo '<td>'.$row['weight'].'kg </td>'; ?>
             </tr>
             <tr>
                 <th class="table-active">등번호</th>
-                <td>1</td>
+                <?php echo '<td>'.$row['uniformnum'].'</td>'; ?>
                 <th class="table-active">소속팀</th>
-                <td>가을팀</td>
+                <?php echo '<td>'.$row['affliated_team'].'</td>'; ?>
             </tr>
             </tbody>
         </table>
