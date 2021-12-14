@@ -53,7 +53,6 @@
 </head>
 
 <body>
-    <div id='calendar'></div>
     <div class="board_wrap">
         <div class="board_title">
             <strong>연습경기 일정 잡기</strong>

@@ -72,7 +72,10 @@
             ?>
             </tbody>
           </table>
-        
+          <div class="bt_wrap">
+                <a href="m.write.php" class="on">메세지 작성</a>
+                <!--<a href="#">수정</a>-->
+            </div>
     </div>
 </body>
 
