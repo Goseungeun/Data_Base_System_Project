@@ -24,7 +24,17 @@
             </div>
         </div>
         <div class="row">
-            <img class="logo mx-1 align-middle" src="test_logo.png">
+          <?php $teamname=$_GET['teamname'];
+            include_once 'dbconfig.php';        //db연결
+            $dbname = "k_league";
+            mysqli_select_db($conn,$dbname) or die ('DB selection failed'); 
+            $sql = "SELECT * FROM team WHERE teamname = '{$teamname}'";
+            $result = mysqli_query($conn,$sql);
+            $row = mysqli_fetch_array($result);
+            // echo $row['emblem'];
+            echo '<img class="logo mx-1 align-middle" src="./logo/'.$row['emblem'].'">';
+            // ehco <img src="'.$row['emblem'].'">;
+          ?>
             <table id="PersonalInformationTable" class="table table-bordered table-light text-center my-3 mx-1 col">
                 <tbody>
                 <tr>
