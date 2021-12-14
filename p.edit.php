@@ -38,8 +38,8 @@
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="practice_match.html" class="on">수정</a>
-                <a href="practice_match.html">취소</a>
+                <a href="practice_match.php" class="on">수정</a>
+                <a href="practice_match.php">취소</a>
             </div>
         </div>
     </div>

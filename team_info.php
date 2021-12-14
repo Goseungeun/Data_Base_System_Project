@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="css/custom.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>
+      function insert(){
+        $.ajax({url:"apply_team.php", success:function(result){
+        $("div").text(result);}
+        })
+       } 
+    </script>
 
 </head>
 <body>
@@ -18,19 +25,34 @@
             <div class="col-6">
                 <h4><b>팀 정보 </b></h4>
             </div>
+            <?php 
+            $teamname=$_GET['teamname'];
+            include_once 'dbconfig.php';        //db연결
+            $dbname = "k_league";
+            session_start();
+            $userid = $_SESSION['user_id']
+            mysqli_select_db($conn,$dbname) or die ('DB selection failed'); 
+            ?>
+
             <div class="col-6">
-                <a href = '#' id="team_apply_button" class="btn text-white bg-indigo right mx-2" onclick="alert('팀에 지원이 되었습니다');">팀 지원하기</a>
+              <?php
+                echo '<a href = "./apply_team.php?plid='.$userid.'&team='.$teamname.'" id="team_apply_button" class="btn text-white bg-indigo right mx-2">팀 지원하기</a>';
+                ?>
                 <a id="back_button" class="btn text-white bg-indigo right" onclick="history.back()" >뒤로 가기</a>
             </div>
         </div>
         <div class="row">
-          <?php $teamname=$_GET['teamname'];
-            include_once 'dbconfig.php';        //db연결
-            $dbname = "k_league";
-            mysqli_select_db($conn,$dbname) or die ('DB selection failed'); 
+          <?php
             $sql = "SELECT * FROM team WHERE teamname = '{$teamname}'";
+            $c_sql = "SELECT * FROM coach WHERE affliated_team = '{$teamname}'";
+            $p_sql = "SELECT * FROM player WHERE affliated_team = '{$teamname}'";
+            $col_sql = "SELECT * FROM team_col WHERE teamname='{$teamname}'";
             $result = mysqli_query($conn,$sql);
+            $c_result = mysqli_query($conn,$c_sql);
+            $p_result = mysqli_query($conn,$p_sql);
+            $col_result = mysqli_query($conn,$col_sql);
             $row = mysqli_fetch_array($result);
+            $c_row = mysqli_fetch_array($c_result);
             // echo $row['emblem'];
             echo '<img class="logo mx-1 align-middle" src="./logo/'.$row['emblem'].'">';
             // ehco <img src="'.$row['emblem'].'">;
@@ -39,21 +61,25 @@
                 <tbody>
                 <tr>
                     <th class="table-active">이름</th>
-                    <td>가을</td>
+                    <?php echo '<td>'.$row['teamname'].'</td>';?>
                     <th class="table-active">감독</th>
-                    <td>가을</td>
+                    <?php echo'<td>'.$c_row['Coachname'].'</td>';?>
                 </tr>
                 <tr>
                     <th class="table-active">창단년도</th>
-                    <td>1999</td>
+                    <?php echo'<td>'.$row['foundingyear'].'</td>';?>
                     <th class="table-active">상징색</th>
-                    <td>빨간색, 파란색</td>
+                    <?php echo'<td>'; 
+                    while($col_row = mysqli_fetch_array($col_result)){
+                      echo $col_row['Teamcol'].' ';
+                    }
+                      echo'</td>'?>
                 </tr>
                 <tr>
-                    <th class="table-active">연고지</th>
-                    <td>서울</td>
+                    <th class="table-active">순위</th>
+                    <?php echo'<td>'.$row['ranking'].'</td>';?>
                     <th class="table-active">홈구장</th>
-                    <td>서울월드컵경기장</td>
+                    <?php echo'<td>'.$row['homestadium'].'</td>';?>
                 </tr>
                 </tbody>
             </table>
@@ -75,24 +101,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td><a href="player_info.html">Mark</a></td>
-                <td>GK</td>
-                <td>한국</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td><a href="player_info.html">Mark1</a></td>
-                <td>GK</td>
-                <td>한국</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td><a href="player_info.html">Mark2</a></td>
-                <td>GK</td>
-                <td>한국</td>
-              </tr>
+              <?php while($p_row = mysqli_fetch_array($p_result)){
+                echo'<tr><td>'.$p_row['uniformnum'].'</td><td><a href="player_info.php?pname='.$p_row['PLname'].'&teamname='.$p_row['affliated_team'].
+                '">'.$p_row['PLname'].'</a></td><td>'.$p_row['position'].'</td><td>'.$p_row['PLnation'].'</td></tr>';
+              }
+              ?>
             </tbody>
           </table>
         
