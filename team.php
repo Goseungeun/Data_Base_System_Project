@@ -29,7 +29,7 @@
                 <th scope="row">1</th>
                 <td><img class="logo" src="test_logo.png"></td>
                 <td>Mark1</td>
-                <td><a href="team_info.html">더보기</a></td>
+                <td><a>더보기</a></td>
               </tr>
               <tr>
                 <th scope="row">2</th>
