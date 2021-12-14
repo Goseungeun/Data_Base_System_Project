@@ -39,7 +39,7 @@
               </tr>
               <tr>
                 <th scope="row">3</th>
-                <td><img class="logo" src="test_logo.png"></td>
+                <td><img class="logo" src="./logo/gangwon.svg"></td>
                 <td>Mark1</td>
                 <td><a href="team_info.html">더보기</a></td>
               </tr>
