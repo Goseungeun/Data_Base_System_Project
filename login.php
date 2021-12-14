@@ -18,7 +18,6 @@
         <div class="row align-items-center g-lg-5 py-5">
           <div class="col-lg-7 text-center text-lg-start">
             <h1 class="display-4 fw-bold lh-1 mb-3">K-League TM</h1>
-            <p class="col-lg-10 fs-4">어쩌구저쩌구</p>
           </div>
           <div class="col-md-10 mx-auto col-lg-5">
             <form class="p-4 p-md-5 border rounded-3 bg-light">
@@ -33,7 +32,6 @@
                 <button class="w-100 btn btn-lg text-white bg-indigo my-1" type="submit" >Sign up</button>
               <button class="w-100 btn btn-lg text-white bg-indigo my-1" type="button" onclick = "location.href = './signin_form.php'">Sign in</button>
               <hr class="my-4">
-              <small class="text-muted">글쓸꺼면쓰고</small>
             </form>
           </div>
         </div>
